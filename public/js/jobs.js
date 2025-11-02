@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         const c = document.getElementById('closeModalInner'); if(c) c.onclick = closeModal;
         const closeX = document.getElementById('closeModal'); if(closeX) closeX.onclick = closeModal;
       },50);
-    } else if(target.classList.contains('ghost')){target.textContent = 'Guardado';target.disabled = true;}
+  } else if(target.classList.contains('ghost')){target.textContent = 'Saved';target.disabled = true;}
   });
 
   // Simple login-remember demo behavior (if login form present)
