@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <span slot="title">Acceso Empresas — PrimerPaso</span>
+  <span slot="title">Company login — PrimerPaso</span>
 
   <main class="container">
     <section class="company-login">
@@ -11,19 +11,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="logo-hero">
           <!-- The 'Paso.com' part will use the --morado color in CSS for a purple accent -->
           <div class="logo">Primer<span>Paso.com</span></div>
-          <p class="muted">Panel de empresas — Acceso profesional</p>
+          <p class="muted">Company panel — professional access</p>
         </div>
 
         <form id="companyLoginForm" class="login-form" novalidate>
-          <label for="companyEmail">Correo de empresa</label>
-          <input id="companyEmail" name="email" type="email" placeholder="contacto@empresa.com" required />
+          <label for="companyEmail">Company email</label>
+          <input id="companyEmail" name="email" type="email" placeholder="contact@company.com" required />
 
-          <label for="companyPassword">Contraseña</label>
-          <input id="companyPassword" name="password" type="password" placeholder="Contraseña" required />
+          <label for="companyPassword">Password</label>
+          <input id="companyPassword" name="password" type="password" placeholder="Password" required />
 
-          <button type="submit" class="btn primary full">Acceder</button>
+          <button type="submit" class="btn primary full">Sign in</button>
 
-          <p class="muted small center" style="margin-top:12px">¿No tienes cuenta? <a href="/company-signup">Regístrate</a></p>
+          <p class="muted small center" style="margin-top:12px">Don't have an account? <a href="/company-signup">Sign up</a></p>
         </form>
       </div>
     </section>

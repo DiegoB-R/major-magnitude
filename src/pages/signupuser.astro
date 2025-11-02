@@ -3,31 +3,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <span slot="title">Registro Estudiante — PrimerPaso</span>
+  <span slot="title">Student signup — PrimerPaso</span>
 
   <main class="container login-container">
     <section class="login-card card">
       <div class="logo-hero">
         <div class="logo">Primer<span>Paso.com</span></div>
-        <p class="muted">Crea tu cuenta de estudiante</p>
+  <p class="muted">Create your student account</p>
       </div>
 
       <form id="signupForm" class="login-form" novalidate>
-        <label for="firstName">Nombre</label>
-        <input id="firstName" name="firstName" type="text" placeholder="Tu nombre" required />
+  <label for="firstName">First name</label>
+  <input id="firstName" name="firstName" type="text" placeholder="Your first name" required />
 
-        <label for="lastName">Apellido</label>
-        <input id="lastName" name="lastName" type="text" placeholder="Tu apellido" required />
+  <label for="lastName">Last name</label>
+  <input id="lastName" name="lastName" type="text" placeholder="Your last name" required />
 
-        <label for="email">Correo electrónico</label>
-        <input id="email" name="email" type="email" placeholder="tu@universidad.edu" required />
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" placeholder="you@university.edu" required />
 
-        <label for="password">Contraseña</label>
-        <input id="password" name="password" type="password" placeholder="Crea una contraseña segura" minlength="8" required />
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" placeholder="Create a secure password" minlength="8" required />
 
-        <button type="submit" class="btn primary full">Crear cuenta</button>
+    <button type="submit" class="btn primary full">Create account</button>
 
-  <p class="muted small center" style="margin-top:16px">¿Ya tienes cuenta? <a href="/loginuser">Inicia sesión</a></p>
+  <p class="muted small center" style="margin-top:16px">Already have an account? <a href="/loginuser">Sign in</a></p>
       </form>
     </section>
   </main>

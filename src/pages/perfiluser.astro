@@ -3,62 +3,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <span slot="title">Mi perfil — PrimerPaso</span>
+  <span slot="title">My profile — PrimerPaso</span>
 
   <main class="container login-container">
     <section class="login-card card">
-      <div class="logo-hero">
-        <div class="logo">Perfil de <span>Estudiante</span></div>
-        <p class="muted">Completa o edita tu perfil para que las empresas puedan encontrarte.</p>
+        <div class="logo-hero">
+        <div class="logo">Student <span>profile</span></div>
+        <p class="muted">Complete or edit your profile so companies can find you.</p>
       </div>
 
       <form id="profileForm" class="login-form" novalidate>
         <div class="two-col">
           <div>
-            <label for="firstName">Nombre</label>
-            <input id="firstName" name="firstName" type="text" placeholder="Tu nombre" />
+            <label for="firstName">First name</label>
+              <input id="firstName" name="firstName" type="text" placeholder="Your first name" />
 
-            <label for="lastName">Apellido</label>
-            <input id="lastName" name="lastName" type="text" placeholder="Tu apellido" />
+              <label for="lastName">Last name</label>
+              <input id="lastName" name="lastName" type="text" placeholder="Your last name" />
 
-            <label for="email">Correo electrónico</label>
-            <input id="email" name="email" type="email" placeholder="tu@universidad.edu" />
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@university.edu" />
 
-            <label for="phone">Teléfono</label>
-            <input id="phone" name="phone" type="tel" placeholder="+51 9xx xxx xxx" />
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+1 555 555 5555" />
 
-            <label for="university">Universidad</label>
-            <input id="university" name="university" type="text" placeholder="Universidad" />
+              <label for="university">University</label>
+              <input id="university" name="university" type="text" placeholder="University" />
 
-            <label for="degree">Carrera / Grado</label>
-            <input id="degree" name="degree" type="text" placeholder="Ingeniería de Sistemas" />
+              <label for="degree">Degree</label>
+              <input id="degree" name="degree" type="text" placeholder="Computer Engineering" />
           </div>
 
           <div>
-            <label for="gradYear">Año de graduación</label>
+            <label for="gradYear">Graduation year</label>
             <input id="gradYear" name="gradYear" type="number" placeholder="2025" />
 
-            <label for="skills">Habilidades (separadas por comas)</label>
+            <label for="skills">Skills (comma separated)</label>
             <input id="skills" name="skills" type="text" placeholder="JavaScript, Python, SQL" />
 
-            <label for="experience">Años de experiencia</label>
+            <label for="experience">Years of experience</label>
             <input id="experience" name="experience" type="number" placeholder="0" />
 
             <label for="linkedin">LinkedIn</label>
-            <input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/tu-perfil" />
+            <input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/your-profile" />
 
-            <label for="portfolio">Portafolio / GitHub</label>
-            <input id="portfolio" name="portfolio" type="url" placeholder="https://github.com/tu-username" />
+            <label for="portfolio">Portfolio / GitHub</label>
+            <input id="portfolio" name="portfolio" type="url" placeholder="https://github.com/your-username" />
 
           </div>
         </div>
 
-        <label for="bio">Resumen / Acerca de</label>
-        <textarea id="bio" name="bio" rows="4" placeholder="Un breve resumen sobre tu experiencia y objetivos"></textarea>
+  <label for="bio">Summary / About</label>
+  <textarea id="bio" name="bio" rows="4" placeholder="A short summary about your experience and goals"></textarea>
 
         <div style="display:flex;gap:12px;margin-top:12px">
-          <button type="submit" class="btn primary">Guardar perfil</button>
-          <a class="btn ghost" href="/integradora">Cancelar</a>
+          <button type="submit" class="btn primary">Save profile</button>
+          <a class="btn ghost" href="/integradora">Cancel</a>
         </div>
       </form>
     </section>

@@ -19,12 +19,12 @@ function renderDashboard(){
   const companyRaw = localStorage.getItem('primerpaso_company');
   const company = companyRaw ? JSON.parse(companyRaw) : null;
   if(!company){
-    el.innerHTML = `<div class="empty"><strong>No estás autenticado como empresa</strong><p class="muted">Inicia sesión como empresa para ver y publicar vacantes.</p></div>`;
+    el.innerHTML = `<div class="empty"><strong>You are not authenticated as a company</strong><p class="muted">Sign in as a company to view and post jobs.</p></div>`;
     return;
   }
   const jobs = (allJobs || []).filter(j=>String(j.ownerId)===String(company.id));
   if(!jobs || jobs.length===0){
-    el.innerHTML = `<div class="empty"><strong>No hay vacantes</strong><p class="muted">Crea tu primera vacante con "Publicar Nueva Vacante".</p></div>`;
+    el.innerHTML = `<div class="empty"><strong>No jobs</strong><p class="muted">Create your first job using "Post a new job".</p></div>`;
     return;
   }
   const lines = jobs.slice().reverse().map(j=>{
@@ -32,13 +32,13 @@ function renderDashboard(){
       <div class="job-card">
         <div>
           <h3 style="margin:0">${escapeHtml(j.title)}</h3>
-          <div class="job-meta">${j.location || 'Remoto / Indeterminado'} · ${j.job_type || ''} · <strong>${j.status}</strong></div>
+          <div class="job-meta">${j.location || 'Remote / Unspecified'} · ${j.job_type || ''} · <strong>${j.status}</strong></div>
           <p style="margin:8px 0 0;color:#333">${escapeHtml((j.description||'').slice(0,200))}${(j.description||'').length>200? '...':''}</p>
         </div>
         <div class="job-actions">
-          <a class="btn ghost" href="/company-jobs/new?edit=${j.id}">Editar</a>
-          <button class="btn" data-id="${j.id}" data-action="toggle">${j.status==='published'?'Despublicar':'Publicar'}</button>
-          <button class="btn ghost" data-id="${j.id}" data-action="delete">Eliminar</button>
+          <a class="btn ghost" href="/company-jobs/new?edit=${j.id}">Edit</a>
+          <button class="btn" data-id="${j.id}" data-action="toggle">${j.status==='published'?'Unpublish':'Publish'}</button>
+          <button class="btn ghost" data-id="${j.id}" data-action="delete">Delete</button>
         </div>
       </div>`;
   }).join('');
@@ -56,8 +56,8 @@ function handleDashboardClick(e){
   let jobs = loadJobs();
   const idx = jobs.findIndex(x=>String(x.id)===String(id));
   if(idx===-1) return;
-  if(action==='delete'){
-    if(!confirm('Eliminar esta vacante?')) return;
+    if(action==='delete'){
+    if(!confirm('Delete this job?')) return;
     jobs.splice(idx,1);
     saveJobs(jobs);
     renderDashboard();
@@ -111,8 +111,8 @@ function initForm(){
       status
     };
     // validation minimal
-    if(!data.title){ alert('El título es requerido'); return; }
-    if(!data.description){ alert('La descripción es requerida'); return; }
+  if(!data.title){ alert('Title is required'); return; }
+  if(!data.description){ alert('Description is required'); return; }
 
     // replace if exists
   const idx = jobs.findIndex(x=>String(x.id)===String(data.id));

@@ -16,19 +16,19 @@ function renderQuickActions(container, isCompany, profile){
   const a1 = document.createElement('a');
   a1.className = 'qa-item';
   a1.href = isCompany ? '/company-login' : '/perfiluser';
-  a1.innerHTML = `<span class="user-avatar" style="background:linear-gradient(135deg,#7c1d11,#4b2b88)">${getInitials(profile?.firstName, profile?.lastName)}</span><span>${profile?.firstName || (isCompany? 'Empresa':'Perfil')}</span>`;
+  a1.innerHTML = `<span class="user-avatar" style="background:linear-gradient(135deg,#7c1d11,#4b2b88)">${getInitials(profile?.firstName, profile?.lastName)}</span><span>${profile?.firstName || (isCompany? 'Company':'Profile')}</span>`;
   container.appendChild(a1);
   // Jobs quick action
   const a2 = document.createElement('a');
   a2.className='qa-item';
   a2.href='/jobsinterface';
-  a2.textContent='Ofertas';
+  a2.textContent='Jobs';
   container.appendChild(a2);
   // My applications
   const a3 = document.createElement('a');
   a3.className='qa-item';
   a3.href='/jobsinterface';
-  a3.textContent='Mis postulaciones';
+  a3.textContent='My applications';
   container.appendChild(a3);
 }
 

@@ -1,9 +1,8 @@
 /**
  * user-menu.js
  *
- * Gestiona la visibilidad del menú de usuario y el de invitado.
- * Si el usuario ha iniciado sesión (datos en localStorage),
- * muestra el menú de usuario con sus iniciales y gestiona el logout.
+ * Manages visibility of guest/user menu. If a user is logged in (data in localStorage),
+ * shows the user menu with initials and handles logout.
  */
 document.addEventListener('DOMContentLoaded', () => {
   const guestMenu = document.getElementById('guestMenu');
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const logoutBtn = document.getElementById('logoutBtn');
 
   if (!guestMenu || !userMenu || !userAvatar || !logoutBtn) {
-    console.warn('Elementos del menú no encontrados. El script no se ejecutará.');
+    console.warn('Menu elements not found. Script will not run.');
     return;
   }
 
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const studentData = localStorage.getItem('primerpaso_student');
 
     if (studentData) {
-      // Usuario ha iniciado sesión
+  // User is logged in
       guestMenu.classList.add('hidden');
       userMenu.classList.remove('hidden');
 
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (initials.trim() && userAvatar) {
         userAvatar.textContent = initials;
       } else if (userIcon) {
-        // Si no hay iniciales, muestra el icono genérico
+        // If no initials, show generic icon
         userAvatar.style.display = 'none';
         userIcon.style.display = 'block';
       }
@@ -42,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
       logoutBtn.addEventListener('click', (e) => {
         e.preventDefault();
         localStorage.removeItem('primerpaso_student');
-        localStorage.removeItem('primerpaso_saved_jobs'); // Limpiar también ofertas guardadas
-        window.location.href = '/'; // Redirigir al inicio
+        localStorage.removeItem('primerpaso_saved_jobs'); // Also clear saved jobs
+        window.location.href = '/'; // Redirect to home
       });
     }
     // Si no hay studentData, los menús se quedan como están (invitado visible, usuario oculto).

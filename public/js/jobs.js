@@ -1,8 +1,8 @@
 // jobs.js - adapted from provided app.js; runs in browser
 const jobs = [
-  {id:1,title:'Prácticas Frontend (React)',company:'DataLabs',location:'Remoto',type:'Prácticas',desc:'Prácticas para estudiantes en React y accesibilidad. 3-6 meses.'},
-  {id:2,title:'Analista de Datos Junior',company:'FinTech Hub',location:'Presencial - Lima',type:'Tiempo Parcial',desc:'Soporte en limpieza de datos y visualización. Buen ambiente.'},
-  {id:3,title:'UX Research Intern',company:'Creative Agency',location:'Remoto',type:'Prácticas',desc:'Ayuda en pruebas de usabilidad y creación de prototipos.'}
+  {id:1,title:'Frontend Internship (React)',company:'DataLabs',location:'Remote',type:'Internship',desc:'Internship for students focusing on React and accessibility. 3-6 months.'},
+  {id:2,title:'Junior Data Analyst',company:'FinTech Hub',location:'On-site - Lima',type:'Part-time',desc:'Support in data cleaning and visualization. Friendly team.'},
+  {id:3,title:'UX Research Intern',company:'Creative Agency',location:'Remote',type:'Internship',desc:'Assist with usability testing and prototype creation.'}
 ];
 
 function createJobCard(job){
@@ -15,8 +15,8 @@ function createJobCard(job){
       <p class="small">${job.desc}</p>
     </div>
     <div class="apply-row">
-      <button class="btn ghost" data-id="${job.id}">Guardar</button>
-      <button class="btn primary" data-id="${job.id}">Ver</button>
+      <button class="btn ghost" data-id="${job.id}">Save</button>
+      <button class="btn primary" data-id="${job.id}">View</button>
     </div>
   `;
   return el;
@@ -26,7 +26,7 @@ function renderJobs(list){
   const container = document.getElementById('jobsList');
   if(!container) return;
   container.innerHTML = '';
-  if(list.length===0){container.innerHTML = '<div class="card">No se encontraron ofertas.</div>';return;}
+  if(list.length===0){container.innerHTML = '<div class="card">No jobs found.</div>';return;}
   list.forEach(j=>container.appendChild(createJobCard(j)));
 }
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const job = jobs.find(x=>x.id==id);
     if(!job) return;
     if(target.classList.contains('primary')){
-  openModal(`<div class="modal-content"><button id="closeModal" class="modal-close">✕</button><h2>${job.title}</h2><p class="muted">${job.company} • ${job.location}</p><p>${job.desc}</p><div style="margin-top:12px"><button class='btn primary' data-action='postular'>Postular</button> <button class='btn ghost' id='closeModalInner'>Cerrar</button></div></div>`);
+    openModal(`<div class="modal-content"><button id="closeModal" class="modal-close">✕</button><h2>${job.title}</h2><p class="muted">${job.company} • ${job.location}</p><p>${job.desc}</p><div style="margin-top:12px"><button class='btn primary' data-action='apply'>Apply</button> <button class='btn ghost' id='closeModalInner'>Close</button></div></div>`);
       // attach close handlers
       setTimeout(()=>{
         const c = document.getElementById('closeModalInner'); if(c) c.onclick = closeModal;
@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     form.addEventListener('submit', (ev)=>{ev.preventDefault(); if(remember && email){ localStorage.setItem('primerpaso_remember', JSON.stringify({email: email.value})); }});
   }
 
-  // Delegate click for postular button inside modal: if student logged in redirect to integradora, else to login
+  // Delegate click for apply button inside modal: if student logged in redirect to dashboard, else to login
   document.addEventListener('click', (e)=>{
     const btn = e.target;
     if(!btn || !btn.dataset) return;
-    if(btn.dataset.action === 'postular'){
+    if(btn.dataset.action === 'apply'){
       try{
         const student = localStorage.getItem('primerpaso_student');
         if(student) window.location.href = '/integradora';
