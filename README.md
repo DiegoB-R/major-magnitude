@@ -17,26 +17,26 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── src
 │   ├── assets
 │   │   └── astro.svg
-# Major Magnitude — Frontend (Astro)
 
-This repository (on branch `frontend`) contains the frontend application built with Astro.
+# PrimerPaso — Frontend (Astro)
 
-Current status (2025-11-06):
+Este repositorio actúa como contenedor del frontend del proyecto PrimerPaso. El código fuente del frontend se mantiene en la rama `frontend`.
 
-- The frontend is implemented in Astro and lives on the `frontend` branch of this repository.
-- The project is currently undergoing framework migration changes and active modifications — do not expect `main` to contain source code.
+Estado actual (06-11-2025):
 
-Notes:
+- El frontend está implementado con Astro y se encuentra en la rama `frontend` de este repositorio.
+- Actualmente se están realizando modificaciones relacionadas con la migración de frameworks; por eso la rama `main` no contiene el código fuente.
 
-- `main` intentionally contains only documentation and project notes. Feature and development work happens on `frontend` (for UI) and on the external backend repository.
-- The canonical backend repository is hosted separately and maintained independently.
+Instrucciones rápidas
 
-If you need the source code to work on the frontend, fetch or checkout the `frontend` branch:
+- Para trabajar con el frontend, cambia a la rama `frontend`:
 
 ```bash
 git fetch origin
 git checkout frontend
 ```
 
-Date: 2025-11-06
+- La rama `main` contiene únicamente documentación y notas del proyecto. El backend se mantiene en un repositorio separado.
+
+Fecha: 2025-11-06
 
